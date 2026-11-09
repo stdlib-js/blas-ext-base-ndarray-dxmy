@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,27 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Multiply elements of a one-dimensional double-precision floating-point ndarray by the corresponding elements of a second one-dimensional double-precision floating-point ndarray and assign the results to the second ndarray.
+* Multiplies elements of a one-dimensional double-precision floating-point ndarray by the corresponding elements of a second one-dimensional double-precision floating-point ndarray and assigns the results to the second ndarray.
 *
-* @module @stdlib/blas-ext-base-ndarray-dxmy
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
-* var dxmy = require( '@stdlib/blas-ext-base-ndarray-dxmy' );
 *
 * var x = new Float64Vector( [ 1.0, 2.0, 3.0, 4.0, 5.0 ] );
 * var y = new Float64Vector( [ 2.0, 3.0, 4.0, 5.0, 6.0 ] );
@@ -33,12 +44,9 @@
 * var out = dxmy( [ x, y ] );
 * // returns <ndarray>[ 2.0, 6.0, 12.0, 20.0, 30.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dxmy( arrays: [ float64ndarray, float64ndarray ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dxmy;
